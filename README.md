@@ -7,7 +7,11 @@ helm install --create-namespace --namespace rook-ceph rook-ceph rook-release/roo
 
 https://rook.io/docs/rook/v1.12/Getting-Started/example-configurations/#cluster-crd
 
-k apply -f cluster.yaml 
+k apply -f cluster-test.yaml 
 
 https://rook.io/docs/rook/v1.12/Troubleshooting/ceph-toolbox/#interactive-toolbox
+
+k apply -f storageclass-test.yaml 
+
+
 ```
