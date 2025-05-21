@@ -20,4 +20,11 @@ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['dat
 
 kubectl proxy
 # open http://localhost:8001/api/v1/namespaces/rook-ceph/services/https:rook-ceph-mgr-dashboard:https-dashboard/proxy/ in the browser.
+
+# Toolbox
+https://rook-io.netlify.app/docs/rook/v1.2/ceph-toolbox
+
+# Object storage
+https://rook-io.netlify.app/docs/rook/v1.2/ceph-object
+
 ```
