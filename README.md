@@ -14,4 +14,10 @@ https://rook.io/docs/rook/v1.12/Troubleshooting/ceph-toolbox/#interactive-toolbo
 k apply -f storageclass-test.yaml 
 
 
+# Dashboard
+# admin user
+kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
+
+kubectl proxy
+# open http://localhost:8001/api/v1/namespaces/rook-ceph/services/https:rook-ceph-mgr-dashboard:https-dashboard/proxy/ in the browser.
 ```
