@@ -4,6 +4,8 @@ metadata:
   name: rook-cephfs
 # Change "rook-ceph" provisioner prefix to match the operator namespace if needed
 provisioner: rook-ceph.cephfs.csi.ceph.com
+reclaimPolicy: Delete
+allowVolumeExpansion: true
 parameters:
   # clusterID is the namespace where the rook cluster is running
   # If you change this namespace, also change the namespace below where the secret namespaces are defined
@@ -24,6 +26,3 @@ parameters:
   csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
   csi.storage.k8s.io/node-stage-secret-name: rook-csi-cephfs-node
   csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
-
-reclaimPolicy: Delete
-allowVolumeExpansion: true

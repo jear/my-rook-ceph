@@ -13,6 +13,9 @@ https://rook.io/docs/rook/v1.12/Troubleshooting/ceph-toolbox/#interactive-toolbo
 
 k apply -f storageclass-test.yaml 
 
+# Cephfs
+k apply -f cephfs-storageclass.yaml
+k apply -f filesystem.yaml
 
 # Dashboard
 # admin user

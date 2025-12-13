@@ -1,0 +1,19 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: rook-ceph-dashboard-external
+  namespace: rook-ceph
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - kind: Rule
+    match: Host(`rook-ceph-dashboard.83-206-89-104.nip.io`)
+    middlewares:
+#    - name: security
+#    - name: ratelimit
+    services:
+    - name: rook-ceph-mgr-dashboard
+      port: 8443
+  tls:
+    certResolver: letsencrypt
